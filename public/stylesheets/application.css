@@ -11,7 +11,7 @@ h4 {border-bottom: 1px dotted #bbb;}
 /***** Layout *****/
 #wrapper {background: white;}
 
-#top-menu {background: #3E5B76; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
+#top-menu {background: #3E5B76; color: #fff; height:1.9em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
 #top-menu ul {margin: 0;  padding: 0;}
 #top-menu li {
   float:left;
@@ -20,7 +20,7 @@ h4 {border-bottom: 1px dotted #bbb;}
   padding: 0px 0px 0px 0px;
   white-space:nowrap;
 }
-#top-menu a {color: #fff; margin-right: 8px; font-weight: bold;}
+#top-menu a {color: #fff; margin-right: 8px; font-weight: bold; font-size: 1.25em;}
 #top-menu #loggedas { float: right; margin-right: 0.5em; color: #fff; }
 
 #account {float:right;}
