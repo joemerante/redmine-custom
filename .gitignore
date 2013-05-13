@@ -1,6 +1,7 @@
 #custom
 redmine_notes.txt
-
+*/.DS_STORE*
+*.DS_Store*
 
 # redmine defaults
 /.project
