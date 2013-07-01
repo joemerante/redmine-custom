@@ -18,6 +18,7 @@
 RedmineApp::Application.routes.draw do
   root :to => 'welcome#index', :as => 'home'
 
+  match 'navigators/search_projects' => 'navigators#search_projects'
   match 'login', :to => 'account#login', :as => 'signin', :via => [:get, :post]
   match 'logout', :to => 'account#logout', :as => 'signout', :via => [:get, :post]
   match 'account/register', :to => 'account#register', :via => [:get, :post], :as => 'register'

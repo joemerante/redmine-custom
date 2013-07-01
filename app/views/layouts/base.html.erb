@@ -40,15 +40,11 @@
         <%= render_project_jump_box %>
     </div>
 
-    <div id="navigate_autocomplete">
-        <%= form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
-        <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
-        <label for='q'>
-          <%= link_to l(:label_search), {:controller => 'search', :action => 'index', :id => @project}, :accesskey => accesskey(:search) %>:
-        </label>
-        <%= text_field_tag 'q', @question, :size => 20, :class => 'small', :accesskey => accesskey(:quick_search) %>
-        <% end %>
-        <%= render_project_jump_box %>
+    <div id="autocompletotron">
+        <label>Navigate here</label>
+        <%= text_field_tag 'navigate_autocomplete' %>
+   
+ 
     </div>
 
     <% end %>

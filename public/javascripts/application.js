@@ -588,3 +588,13 @@ function blockEventPropagation(event) {
 $(document).ready(setupAjaxIndicator);
 $(document).ready(hideOnLoad);
 $(document).ready(addFormObserversForDoubleSubmit);
+
+
+//added
+$(function() {
+  $( "#navigate_autocomplete" ).autocomplete({
+    source: 'navigators/search_projects'
+  });
+});
+
+
