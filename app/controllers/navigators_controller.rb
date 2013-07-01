@@ -2,8 +2,6 @@
 
 class NavigatorsController < ApplicationController
 
-#	before_filter :login_required
-
 	def all_projects
     @all_projects = {}
     Project.find(:all).each do |project|
@@ -22,12 +20,16 @@ class NavigatorsController < ApplicationController
     # end
 
     # This shows a list of all possible results for any user input - need to make it an actual search, but good enough for now since there are only ten possible results
-    results = []
-    all_projects = Project.all
-    all_projects.each do |project|
-    	results.push(project.name)
+    if User.current.logged?
+      results = []
+      all_projects = Project.all
+      all_projects.each do |project|
+      	results.push(project.name)
+      end
+  		render json: results
+    else
+      redirect_to 'root'
     end
-		render json: results
   end
 
   # include the project id's in the json results, figure out how to render autocomplete results as links to 'projects/:id/activity'
