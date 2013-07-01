@@ -1,3 +1,5 @@
+Minor personalizations I've made to Redmine - enlarged fonts on the menus, an extra autocomplete field to more easily navigate between projects and the like. 
+
 = Redmine
 
 Redmine is a flexible project management web application written using Ruby on Rails framework.
