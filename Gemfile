@@ -19,14 +19,14 @@ group :openid do
 end
 
 # Optional gem for exporting the gantt to a PNG file, not supported with jruby
-platforms :mri, :mingw do
-  group :rmagick do
-    # RMagick 2 supports ruby 1.9
-    # RMagick 1 would be fine for ruby 1.8 but Bundler does not support
-    # different requirements for the same gem on different platforms
-    gem "rmagick", ">= 2.0.0"
-  end
-end
+# platforms :mri, :mingw do
+#   group :rmagick do
+#     # RMagick 2 supports ruby 1.9
+#     # RMagick 1 would be fine for ruby 1.8 but Bundler does not support
+#     # different requirements for the same gem on different platforms
+#     gem "rmagick", ">= 2.0.0"
+#   end
+# end
 
 platforms :jruby do
   # jruby-openssl is bundled with JRuby 1.7.0
@@ -71,15 +71,29 @@ else
   warn("Please configure your config/database.yml first")
 end
 
-group :development do
-  gem "rdoc", ">= 2.4.2"
-  gem "yard"
-end
+# group :development do
+#   gem "rdoc", ">= 2.4.2"
+#   gemR "yard"
+# end
 
-group :test do
-  gem "shoulda", "~> 3.3.2"
-  gem "mocha"
-  gem 'capybara', '~> 2.0.0'
+# group :test do
+#   gem 'rspec-rails', '~> 2.0'
+#   #gem "shoulda", "~> 3.3.2"
+#   gem "mocha"
+#   gem 'capybara', '~> 2.0.0'
+# end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'mocha' # for stubbing and mocking in rspec
+  gem "factory_girl_rails", "~> 4.0"
+  gem "fakeweb", "~> 1.3" # use to simulate connection to third party web services
+  gem 'cucumber-rails-training-wheels' #prefab step defs
+  gem 'database_cleaner' # clean cucumber test db btwn runs
+  gem 'capybara-webkit' #capybara driver for headless webkit to test js
+  gem 'launchy' #debugging aid for user stories
+  # gem 'webrat'
+  # gem 'webdriver' # addon to capybara to simulate js
 end
 
 local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
