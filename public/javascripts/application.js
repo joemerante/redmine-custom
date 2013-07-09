@@ -591,7 +591,7 @@ $(document).ready(addFormObserversForDoubleSubmit);
 
 
 //added by me
-var source = 'navigators/search_projects';
+var source = '/navigators/search_projects';
 $(function() {
    $( "#navigate_autocomplete" ).autocomplete({
     source: source,
