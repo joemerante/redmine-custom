@@ -24,15 +24,14 @@ class NavigatorsController < ApplicationController
       results = []
       all_projects = Project.all
       all_projects.each do |project|
-      	results.push(project.name)
+      	results.push(value: project_path(project.id), label: project.name)
       end
-  		render json: results
+      render json: results
     else
       redirect_to 'root'
     end
   end
 
-  # include the project id's in the json results, figure out how to render autocomplete results as links to 'projects/:id/activity'
   # set up key bindings and make a keyboard command to jump into the #navigate_autocomplete search field
 
 

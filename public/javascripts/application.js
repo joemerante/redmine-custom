@@ -590,11 +590,14 @@ $(document).ready(hideOnLoad);
 $(document).ready(addFormObserversForDoubleSubmit);
 
 
-//added
+//added by me
+var source = 'navigators/search_projects';
 $(function() {
-  $( "#navigate_autocomplete" ).autocomplete({
-    source: 'navigators/search_projects'
+   $( "#navigate_autocomplete" ).autocomplete({
+    source: source,
+    select: function(event, ui) {
+      // the controller sends json like [{:value=>"/projects/4", :label=>"CRMed"}]
+      window.location.href = ui.item.value;
+    }
   });
 });
-
-
