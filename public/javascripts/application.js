@@ -601,3 +601,10 @@ $(function() {
     }
   });
 });
+
+// mousetrap.min.js is included in views/layouts/base.html.erb
+$(document).ready(function () {
+  Mousetrap.bind('fn+p', function() { 
+    $('#navigate_autocomplete').focus();
+  });
+});

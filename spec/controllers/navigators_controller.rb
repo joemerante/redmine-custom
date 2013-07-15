@@ -1,4 +1,6 @@
 require "spec_helper"
+require "capybara/rspec"
+require "capybara/rails"
 
 describe NavigatorsController do
 	integrate_views
@@ -8,15 +10,17 @@ describe NavigatorsController do
     controller.class.skip_before_filter :login_required
     # only two project fixtures in there, so test passes
     NavigatorsController.new.all_projects.should == {projects(:projects_001).name => projects(:projects_001).id, projects(:projects_002).name => projects(:projects_002).id}
-    # response.should redirect_to("/clients/#{assigns(:client).id}")
   end
 
   it "should show the list of all projects as an autocomplete dropdown in the #navigate_autocomplete field" do
   	# id #navigate_autocomplete.DOMchildren.should == @all_projects.keys
-  	pending "figure out how to use capybara to test this"
+  	
+
+
+
+    pending "figure out how to use capybara to test this"
 
 	end
-
 
   it "should redirect to the project page when you select a project" do
     pending "first "
