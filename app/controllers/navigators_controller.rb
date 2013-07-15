@@ -11,20 +11,15 @@ class NavigatorsController < ApplicationController
   end
 
   def search_projects
-    # jquery autocomplete puts the search in params[:term] - so search_projects?term=
-    # if params[:term]
-    #   like = "%".concat(params[:term].concat("%"))
-    #   users = Project.where("name like ?", like)
-    # else
-    #   users = Project.all
-    # end
+    # jquery autocomplete puts the search query in params[:term]
 
-    # This shows a list of all possible results for any user input - need to make it an actual search, but good enough for now since there are only ten possible results
     if User.current.logged?
       results = []
       all_projects = Project.all
       all_projects.each do |project|
-      	results.push(value: project_path(project.id), label: project.name)
+      	if (project.name.include? params[:term]) || (project.name.downcase.include? params[:term]) 
+          results.push(value: project_path(project.id), label: project.name)
+        end
       end
       render json: results
     else
