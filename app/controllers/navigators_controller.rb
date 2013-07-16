@@ -26,8 +26,4 @@ class NavigatorsController < ApplicationController
       redirect_to 'root'
     end
   end
-
-  # set up key bindings and make a keyboard command to jump into the #navigate_autocomplete search field
-
-
 end

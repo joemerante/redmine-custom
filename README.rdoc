@@ -1,4 +1,7 @@
-Minor personalizations I've made to Redmine - enlarged fonts on the menus, an extra autocomplete field to more easily navigate between projects and the like. 
+Personalizations I've made to Redmine:
+-Enlarged fonts on the menus! 
+-An autocomplete field in the header of every page for better mouse-free navigation between projects, bring it into focus by pressing the function-p keys
+-Indicate in the header which Rails.env is running to help avoid entering real issues in the dev environment
 
 = Redmine
 
