@@ -606,5 +606,21 @@ $(function() {
 $(document).ready(function () {
   Mousetrap.bind('fn+p', function() { 
     $('#navigate_autocomplete').focus();
+    // return false in the callback to prevent the default 
+    return false;
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

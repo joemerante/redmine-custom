@@ -14,14 +14,14 @@ class NavigatorsController < ApplicationController
     # jquery autocomplete puts the search query in params[:term]
 
     if User.current.logged?
-      results = []
-      all_projects = Project.all
-      all_projects.each do |project|
-      	if (project.name.include? params[:term]) || (project.name.downcase.include? params[:term]) 
-          results.push(value: project_path(project.id), label: project.name)
+      @results = []
+      @all = Project.all
+      @all.each do |project|
+      	if project.name.downcase.include? params[:term].downcase
+          @results.push(value: project_path(project.id), label: project.name)
         end
       end
-      render json: results
+      render json: @results
     else
       redirect_to 'root'
     end
